@@ -7,5 +7,11 @@ pipeline {
       }
     }
 
+    stage('Teste Unidade') {
+      steps {
+        sh 'mvn test'
+      }
+    }
+
   }
 }
