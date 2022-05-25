@@ -1,0 +1,12 @@
+- hosts: all
+  tasks:
+    - name: "Configura deploy app"
+      copy:
+        src: "k8s-deploy.yml"
+        dest: "/root/k8s-deploy.yml"
+      become: yes
+    
+    - name: "Executa kubectl"
+      shell: kubectl apply -f /root/k8s-deploy.yml
+      become: yes
+      
