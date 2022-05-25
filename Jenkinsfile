@@ -21,5 +21,11 @@ docker push didox/ilab-java-tdd'''
       }
     }
 
+    stage('Deploy k8s') {
+      steps {
+        sh 'ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i hosts ansible.yml -u ubuntu --private-key /var/lib/jenkins/chave-privada-aws.pem'
+      }
+    }
+
   }
 }
