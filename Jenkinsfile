@@ -15,7 +15,8 @@ pipeline {
 
     stage('Docker Push') {
       steps {
-        sh '''docker build -t didox/ilab-java-tdd .
+        sh '''mvn package -Dmaven.test.skip
+docker build -t didox/ilab-java-tdd .
 docker push didox/ilab-java-tdd'''
       }
     }
