@@ -2,6 +2,7 @@
 ### Gerar Build do java ###
 ./mvnw package && java -jar target/validarCpf.jar
 
+
 ### Gerar o build do docker ###
 docker build -t didox/validador-cpf-java-turma-devops -f Dockerfile .
 
